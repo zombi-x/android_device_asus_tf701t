@@ -56,11 +56,7 @@ BOARD_EGL_CFG := device/asus/tf701t/egl.cfg
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
-# Recovery
-RECOVERY_FSTAB_VERSION := 2
-RECOVERY_FONT := \"roboto_23x41.h\"
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD -DADD_LEGACY_MEMORY_DEALER_CONSTRUCTOR_SYMBOL
-
+# Release tools
 TARGET_RELEASETOOLS_EXTENSIONS := device/asus/tf701t
 
 # Partition
@@ -127,11 +123,21 @@ BOARD_SEPOLICY_UNION += \
     widevine_install.te \
     kernel.te \
     gpsd.te \
-    servicemanager.te \
-    sysinit.te
+    servicemanager.te
 
 BOARD_HARDWARE_CLASS := device/asus/tf701t/cmhw/
 
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.macallan
 
 EXTENDED_FONT_FOOTPRINT := true
+
+# TWRP
+TW_THEME := landscape_hdpi
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+TW_INCLUDE_CRYPTO := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TARGET_RECOVERY_FSTAB := device/asus/tf701t/init/fstab.macallan
+BOARD_CUSTOM_BOOTIMG_MK := device/asus/tf701t/recovery/recovery.mk

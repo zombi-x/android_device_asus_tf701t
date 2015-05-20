@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2011 The Android Open-Source Project
+# Copyright (C) 2011 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +11,18 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/tf701t.mk \
-    $(LOCAL_DIR)/zombi_tf701t.mk
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
+# Inherit some common cyanogenmod stuff.
+$(call inherit-product, vendor/zombi/config/common_tablet.mk)
+
+# Inherit device configuration for tf701t.
+$(call inherit-product, device/asus/tf701t/tf701t.mk)
+
+# Setup device specific product configuration.
+PRODUCT_NAME := zombi_tf701t
+PRODUCT_BRAND := Asus
+PRODUCT_DEVICE := tf701t
+PRODUCT_MODEL := K00C
