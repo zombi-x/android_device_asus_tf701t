@@ -11,17 +11,14 @@ on early-init
     start ueventd
     start healthd
 
-service set_permissive /sbin/toolbox setenforce 0
-    oneshot
-    seclabel u:r:recovery:s0
-
 on init
     export PATH /sbin:/system/bin
-    export LD_LIBRARY_PATH .:/sbin
+    export PATH /sbin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
-
+    export LD_LIBRARY_PATH /touch_libs
+    export LD_LIBRARY_PATH .:/sbin
     symlink /system/etc /etc
 
     mkdir /boot
@@ -40,9 +37,6 @@ on init
     chown root shell /tmp
     chmod 0775 /tmp
 
-    write /proc/sys/kernel/panic_on_oops 1
-    write /proc/sys/vm/max_map_count 1000000
-    
     mkdir /mnt 0775 root system
     mkdir /storage 0050 root sdcard_r
     mount tmpfs tmpfs /storage mode=0050,uid=0,gid=1028
@@ -86,6 +80,9 @@ on boot
 
     class_start default
 
+    # Repeatable keys
+    setprop ro.cwm.enable_key_repeat true
+
 on property:sys.powerctl=*
     powerctl ${sys.powerctl}
 
@@ -112,7 +109,7 @@ service vold /sbin/minivold
     socket vold stream 0660 root mount
     ioprio be 2
     seclabel u:r:recovery:s0
-
+service rm-wrapper /sbin/rm-wrapper
 # setup_adbd will start adb once it has checked the keys
 on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 0
