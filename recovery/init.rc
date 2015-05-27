@@ -21,7 +21,6 @@ on init
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
-    export LD_LIBRARY_PATH /touch_libs
     export LD_LIBRARY_PATH .:/sbin
     symlink /system/etc /etc
 
@@ -112,7 +111,7 @@ service vold /sbin/minivold
     socket vold stream 0660 root mount
     ioprio be 2
     seclabel u:r:recovery:s0
-service rm-wrapper /sbin/rm-wrapper
+
 # setup_adbd will start adb once it has checked the keys
 on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 0
