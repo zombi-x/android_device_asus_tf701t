@@ -140,5 +140,5 @@ TW_INCLUDE_CRYPTO := true
 TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TARGET_RECOVERY_INITRC := device/asus/tf701t/recovery/init.rc
-TARGET_RECOVERY_FSTAB := device/asus/tf701t/init/fstab.macallan
+TARGET_RECOVERY_FSTAB := device/asus/tf701t/recovery/recovery.fstab
 BOARD_CUSTOM_BOOTIMG_MK := device/asus/tf701t/recovery/recovery.mk
