@@ -92,7 +92,7 @@ service ueventd /sbin/ueventd
     critical
     seclabel u:r:ueventd:s0
 
-service healthd /sbin/healthd -n
+service healthd /sbin/healthd -r
     critical
     seclabel u:r:healthd:s0
 
