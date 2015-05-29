@@ -1,0 +1,2 @@
+# Start rm-wrapper for TWRP
+service rm-wrapper /sbin/rm-wrapper
