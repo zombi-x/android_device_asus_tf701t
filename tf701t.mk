@@ -177,10 +177,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-        audio.a2dp.default \
-        audio.usb.default \
-        audio.r_submix.default \
-        libaudioutils
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
+    libaudioutils
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -199,10 +199,14 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-       make_ext4fs \
-       setup_fs
+    make_ext4fs \
+    setup_fs
 
 PRODUCT_CHARACTERISTICS := tablet
 
