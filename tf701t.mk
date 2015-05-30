@@ -21,18 +21,15 @@ $(call inherit-product-if-exists, vendor/asus/tf701t/tf701t-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     device/asus/tf701t/overlay
 
-# Root
-PRODUCT_COPY_FILES += \
-    device/asus/tf701t/fstab.macallan:root/fstab.macallan \
-    device/asus/tf701t/ueventd.macallan.rc:root/ueventd.macallan.rc
-
 # Init
 PRODUCT_COPY_FILES += \
+    device/asus/tf701t/init/fstab.macallan:root/fstab.macallan \
+    device/asus/tf701t/init/ueventd.macallan.rc:root/ueventd.macallan.rc \
     device/asus/tf701t/init/init.macallan.rc:root/init.macallan.rc \
     device/asus/tf701t/init/init.hdcp.rc:root/init.hdcp.rc \
     device/asus/tf701t/init/init.macallan.usb.rc:root/init.macallan.usb.rc \
     device/asus/tf701t/init/init.tf.rc:root/init.tf.rc \
-    device/asus/tf701t/init/init.recovery.macallan.rc:root/init.recovery.macallan.rc
+    device/asus/tf701t/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -79,7 +76,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_COPY_FILES += \
-    device/asus/tf701t/power.macallan.rc:system/etc/power.macallan.rc
+    device/asus/tf701t//init/power.macallan.rc:system/etc/power.macallan.rc
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -181,10 +178,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-        audio.a2dp.default \
-        audio.usb.default \
-        audio.r_submix.default \
-        libaudioutils
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
+    libaudioutils
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -203,10 +200,14 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-       make_ext4fs \
-       setup_fs
+    make_ext4fs \
+    setup_fs
 
 PRODUCT_CHARACTERISTICS := tablet
 
