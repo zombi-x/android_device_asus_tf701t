@@ -47,7 +47,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/asus/tf701t
-TARGET_KERNEL_CONFIG := cyanogenmod_tf701t_defconfig
+TARGET_KERNEL_CONFIG := omni_tf701t_defconfig
 
 # Video
 BOARD_EGL_CFG := device/asus/tf701t/egl.cfg
