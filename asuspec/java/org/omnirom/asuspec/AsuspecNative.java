@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.asuspec;
+package org.omnirom.asuspec;
 
 import android.util.Log;
 

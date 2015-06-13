@@ -68,7 +68,7 @@ static JNINativeMethod sMethods[] = {
 
 int register_asuspec_KeyHandler(JNIEnv* env)
 {
-    return jniRegisterNativeMethods(env, "com/cyanogenmod/asuspec/KeyHandler", sMethods, NELEM(sMethods));
+    return jniRegisterNativeMethods(env, "org/omnirom/asuspec/KeyHandler", sMethods, NELEM(sMethods));
 }
 
 } /* namespace asuspec */

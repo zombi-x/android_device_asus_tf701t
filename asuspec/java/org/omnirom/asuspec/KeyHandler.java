@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.asuspec;
+package org.omnirom.asuspec;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.ActivityNotFoundException;
@@ -53,10 +53,10 @@ public final class KeyHandler implements DeviceKeyHandler {
     private static final String SETTING_TOUCHPAD_STATUS = "touchpad_status";
 
     public static final String PERMISSION_KEYPAD_RECEIVER =
-            "com.cyanogenmod.asuspec.permission.KEYPAD_RECEIVER";
+            "org.omnirom.asuspec.permission.KEYPAD_RECEIVER";
 
     public static final String ACTION_DOCK_KEYPAD_KEY_PRESSED =
-                                "com.cyanogenmod.asuspec.actions.ACTION_DOCK_KEYPAD_KEY_PRESSED";
+                                "org.omnirom.asuspec.actions.ACTION_DOCK_KEYPAD_KEY_PRESSED";
     public static final String EXTRA_ASUSPEC_KEY = "key";
     public static final String EXTRA_ASUSPEC_STATUS = "status";
     public static final String EXTRA_ASUSPEC_VALUE = "value";
