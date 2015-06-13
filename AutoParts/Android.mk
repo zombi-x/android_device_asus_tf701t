@@ -8,7 +8,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_SRC_FILES += $(call all-java-files-under, ../asuspec/java)
 
-LOCAL_PACKAGE_NAME := AutoParts_tfp
+LOCAL_PACKAGE_NAME := AutoParts
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_CERTIFICATE := platform
 

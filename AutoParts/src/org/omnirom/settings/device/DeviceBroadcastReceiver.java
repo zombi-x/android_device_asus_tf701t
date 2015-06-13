@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.omnirom.settings.device;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -25,7 +25,7 @@ import android.content.res.Resources;
 import android.os.Handler;
 import android.os.UserHandle;
 
-import com.cyanogenmod.asuspec.KeyHandler;
+import org.omnirom.asuspec.KeyHandler;
 
 public class DeviceBroadcastReceiver extends BroadcastReceiver {
 

@@ -2,8 +2,8 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= \
-    com_cyanogenmod_asuspec_KeyHandler.cpp \
-    com_cyanogenmod_asuspec_AsuspecNative.cpp
+    org_omnirom_asuspec_KeyHandler.cpp \
+    org_omnirom_asuspec_AsuspecNative.cpp
 
 LOCAL_C_INCLUDES += \
     $(JNI_H_INCLUDE)
