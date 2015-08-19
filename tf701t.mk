@@ -204,6 +204,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
+# Wifi
+PRODUCT_PACKAGES += \
+    hostapd \
+    dhcpcd.conf \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
