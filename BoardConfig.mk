@@ -50,7 +50,6 @@ TARGET_KERNEL_SOURCE := kernel/asus/tf701t
 TARGET_KERNEL_CONFIG := omni_tf701t_defconfig
 
 # Video
-BOARD_EGL_CFG := device/asus/tf701t/egl.cfg
 USE_OPENGL_RENDERER := true
 VSYNC_EVENT_PHASE_OFFSET_NS := 0
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 1
